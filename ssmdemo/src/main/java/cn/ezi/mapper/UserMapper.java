@@ -1,14 +1,12 @@
-package cn.ezi.servieces;
-
-
+package cn.ezi.mapper;
 
 
 import cn.ezi.pojo.User_t;
 
 
-public interface IUserService {
+public interface UserMapper {
 	
-
 	public User_t selectByPrimaryKey(int key);
+	
 
 }

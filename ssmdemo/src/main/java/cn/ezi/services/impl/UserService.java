@@ -2,20 +2,22 @@ package cn.ezi.services.impl;
 
 import javax.annotation.Resource;
 
+
 import org.springframework.stereotype.Service;
 
-import cn.ezi.dao.IUserDao;
-import cn.ezi.pojo.User;
+import cn.ezi.mapper.UserMapper;
+
+import cn.ezi.pojo.User_t;
 import cn.ezi.servieces.IUserService;
 
 @Service("userService")
 public class UserService implements IUserService {
 	@Resource
-	private IUserDao userDao;
+	private UserMapper userMapper;
 
 	@Override
-	public User selectByPrimaryKey(int key) {		
-		return this.userDao.selectByPrimaryKey(key);
+	public User_t selectByPrimaryKey(int key) {		
+		return this.userMapper.selectByPrimaryKey(key);
 	}
 	
 }

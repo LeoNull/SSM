@@ -2,6 +2,7 @@ package shop;
 
 import javax.annotation.Resource;
 
+
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,8 +12,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSON;
 
-import cn.ezi.pojo.User;
-
+import cn.ezi.pojo.Orders;
+import cn.ezi.pojo.User_t;
+import cn.ezi.services.impl.UserService;
 import cn.ezi.servieces.IUserService;
 
 
@@ -23,13 +25,13 @@ public class TextSM {
 	private static Logger logger = Logger.getLogger(TextSM.class);
 	
 	@Resource
-	private IUserService userService =null;
+	private IUserService userService ;
 	
 	@Test
 	public void test1(){
 		int key=1;
-		User user=userService.selectByPrimaryKey(key);
-		logger.info(JSON.toJSONString(user));
+		User_t user_t=userService.selectByPrimaryKey(key);
+		logger.info(JSON.toJSONString(user_t));
 	}
 
 }
